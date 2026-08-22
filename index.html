@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="google-site-verification" content="<meta name="google-site-verification FgWNjWtGRydKhp33NORun33SKe3h-4HVoSVHBDLlXEE" />
+    <meta name="google-site-verification" content="FgWNjWtGRydKhp33NORun33SKe3h-4HVoSVHBDLlXEE" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sua Chua Noi That Bac Ninh</title>
@@ -20,20 +20,23 @@
     </style>
 </head>
 <body>
+
 <div class="chat-container">
-    <div class="chat-header">Noi That Chung Cu Bac Ninh</div>
-    <div class="hotline-banner">Hotline: 0985.002.002</div>
+    <div class="chat-header">Nội Thất Chung Cư Bắc Ninh - Tư Vấn 24/7</div>
+    <div class="hotline-banner">📞 Hotline kỹ thuật: <strong>0985.002.002</strong> (Bấm để gọi trực tiếp)</div>
     <div class="chat-messages" id="chatMessages">
-        <div class="message bot">Xin chao! Toi co the giup gi cho anh/chi?</div>
+        <div class="message bot">Xin chào anh/chị, Anh/chị có nhu cầu về sửa chữa hoặc làm mới nội thất tại Bắc Ninh ạ? Cần em tư vấn cụ thể hạng mục nào không?</div>
     </div>
     <div class="chat-input">
-        <input type="text" id="userInput" placeholder="Nhap noi dung..." onkeypress="handleKey(event)">
+        <input type="text" id="userInput" placeholder="Nhập yêu cầu hoặc số điện thoại..." onkeypress="handleKey(event)">
         <button onclick="sendMessage()">➤</button>
     </div>
 </div>
+
 <script>
     const chatMessages = document.getElementById('chatMessages');
     const userInput = document.getElementById('userInput');
+
     function appendMessage(text, sender) {
         const div = document.createElement('div');
         div.className = `message ${sender}`;
@@ -41,14 +44,23 @@
         chatMessages.appendChild(div);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
+
     function sendMessage() {
         const text = userInput.value.trim();
         if (!text) return;
+
         appendMessage(text, 'user');
         userInput.value = '';
-        setTimeout(() => { appendMessage("Da nhan tin, vui long lien he hotline de duoc ho tro nhanh nhat.", 'bot'); }, 800);
+
+        setTimeout(() => {
+            appendMessage("Đã nhận yêu cầu của anh/chị, để được tư vấn và báo giá nhanh chóng nhất, anh/chị vui lòng liên hệ trực tiếp hotline kỹ thuật trên.", 'bot');
+        }, 800);
     }
-    function handleKey(event) { if (event.key === 'Enter') sendMessage(); }
+
+    function handleKey(event) {
+        if (event.key === 'Enter') sendMessage();
+    }
 </script>
+
 </body>
 </html>
